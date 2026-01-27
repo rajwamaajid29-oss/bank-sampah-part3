@@ -12,7 +12,7 @@ class CollectorForm
     {
         return $schema
             ->components([
-                TextInput::make('collector_name')
+                TextInput::make('collector_names')
                     ->required(),
                 TextInput::make('address')
                     ->label('Alamat')

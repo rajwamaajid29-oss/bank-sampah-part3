@@ -15,7 +15,7 @@ class CollectorsTable
     {
         return $table
             ->columns([
-                 TextColumn::make('collector_name')
+                 TextColumn::make('collector_names')
                     ->searchable(),
                 TextColumn::make('address')
                     ->label('Alamat')
