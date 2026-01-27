@@ -12,9 +12,7 @@ class TypeTrashForm
     {
         return $schema
             ->components([
-                TextInput::make('types_names')
-                    ->required(),
-                TextInput::make('price_per_gram')
+                TextInput::make('names')
                     ->required(),
                 Textarea::make('description')
                     ->required()

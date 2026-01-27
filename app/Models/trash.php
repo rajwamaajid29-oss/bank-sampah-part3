@@ -5,16 +5,19 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class TypeTrash extends Model
+class trash extends Model
 {
      use HasFactory;
     protected $fillable = [
-        'id',
         'names',
+        'type_trash_id',
+        'price',
+        'unit',
         'description',
     ];
 
-    public function trashes(){
-        return $this->hasMany(trash::class);
+    public function typeTrash(){
+        return $this->belongsTo(TypeTrash::class);
     }
+
 }
