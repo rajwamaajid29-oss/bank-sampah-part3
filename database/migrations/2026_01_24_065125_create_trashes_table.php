@@ -11,10 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('type_trashes', function (Blueprint $table) {
+        Schema::create('trashes', function (Blueprint $table) {
             $table->id();
             $table->string('names');
-            $table->text('description');
+            $table->foreignId('type_trash_id')->constrained('type_trashes')->onDelete('cascade');
+            $table->integer('price');
+            $table->enum('unit', ['gram', 'kilogram', 'pcs']);
+            $table->text('description')->nullable();
             $table->timestamps();
         });
     }
@@ -24,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('type_trashes');
+        Schema::dropIfExists('trashes');
     }
 };
