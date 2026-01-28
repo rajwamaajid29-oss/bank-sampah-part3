@@ -14,20 +14,19 @@ class CollectorForm
             ->components([
                 TextInput::make('collector_names')
                     ->required(),
-                TextInput::make('address')
+                Textarea::make('address')
                     ->label('Alamat')
-                    ->email()
                     ->required(),
                 TextInput::make('phone_number')
                     ->required(),
-                Textarea::make('email')
+                TextInput::make('email')
                     ->required()
+                    ->email()
                     ->columnSpanFull(),
                 TextInput::make('collector_type')
                     ->required(),
                 TextInput::make('status')
                     ->required()
-                    ->numeric(),
             ]);
     }
 }

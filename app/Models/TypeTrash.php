@@ -9,8 +9,8 @@ class TypeTrash extends Model
 {
      use HasFactory;
     protected $fillable = [
-        'id',
-        'names',
+        'types_names',
+        'price_per_gram',
         'description',
     ];
 

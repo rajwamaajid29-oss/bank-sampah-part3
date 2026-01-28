@@ -24,7 +24,7 @@ class TrashForm
 
                         Select::make('type_trash_id')
                             ->label('Jenis Sampah')
-                            ->relationship('typeTrash','names' )
+                            ->relationship('typeTrash','types_names' )
                             ->preload()
                             ->required(),
 

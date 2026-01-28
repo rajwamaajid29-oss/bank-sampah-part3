@@ -25,7 +25,6 @@ class CustomerForm
                     ->required()
                     ->columnSpanFull(),
                 TextInput::make('phone_numbers')
-                    ->tel()
                     ->required(),
             ]);
     }

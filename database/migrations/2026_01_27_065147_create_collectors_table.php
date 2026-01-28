@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('collector_names');
             $table->string('address');
             $table->string('phone_number');
-            $table->text('email');
+            $table->string('email');
             $table->string('collector_type');
             $table->string('status');
             $table->timestamps();

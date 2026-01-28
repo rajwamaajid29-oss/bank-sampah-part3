@@ -12,6 +12,5 @@ class Customer extends Model
         'password',
         'address',
         'phone_numbers',
-        'points_id',
     ];
 }

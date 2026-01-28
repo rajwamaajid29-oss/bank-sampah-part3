@@ -18,7 +18,6 @@ return new class extends Migration
             $table->string('password');
             $table->text('address');
             $table->string('phone_numbers');
-            $table->foreignId('points_id')->constrained()->cascadeOnDelete();
             $table->timestamps();
         });
     }
