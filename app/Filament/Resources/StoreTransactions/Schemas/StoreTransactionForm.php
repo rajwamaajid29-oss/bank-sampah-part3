@@ -13,28 +13,48 @@ class StoreTransactionForm
     {
         return $schema
             ->components([
-                TextInput::make('transaction_code')
-                    ->label('Kode Transaksi')
-                    ->required(),
+               TextInput::make('transaction_code')
+                    ->label('Transaction Code')
+                    ->required()
+                    ->maxLength(50),
+
                 DatePicker::make('transaction_date')
-                    ->label('Tanggal Transaksi')
-                    ->date()
+                    ->label('Transaction Date')
                     ->required(),
-                Select::make('customers_id')
-                    ->label('ID Nasabah')
-                    ->relationship('customers','id' )
+
+                Select::make('customer_id')
+                    ->label('Customer')
+                    ->relationship('customer', 'names_customers') // relasi ke Customer, tampilkan kolom 'name'
                     ->required(),
-                Select::make('seller_id')
-                    ->label('ID Penjual')
+
+                Select::make('collector_id')
+                    ->label('Collector')
+                    ->relationship('collector', 'collector_names') // relasi ke Collector, tampilkan kolom 'name'
                     ->required(),
+
                 TextInput::make('total_amount')
-                    ->label('Jumlah Total'),
-                TextInput::make('payment_method')
-                    ->label('Metode Pembayaran'),
-                TextInput::make('payment_status')
-                    ->label('Status Pembayaran'),
-                TextInput::make('transaction_status')
-                    ->label('Status Transaksi')
+                    ->label('Total Amount')
+                    ->numeric()
+                    ->required(),
+
+                Select::make('payment_method')
+                    ->label('Payment Method')
+                    ->options([
+                        'cash' => 'Cash',
+                        'transfer' => 'Transfer',
+                        'qris' => 'QRIS',
+                    ])
+                    ->required(),
+
+                Select::make('payment_status')
+                    ->label('Payment Status')
+                    ->options([
+                        'pending' => 'Pending',
+                        'paid' => 'Paid',
+                        'failed' => 'Failed',
+                    ])
+                    ->required(),
+            
             ]);
     }
 }

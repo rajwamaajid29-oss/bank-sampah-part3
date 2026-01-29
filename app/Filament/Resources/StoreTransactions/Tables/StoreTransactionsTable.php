@@ -22,11 +22,11 @@ class StoreTransactionsTable
                     ->label('Tanggal Transaksi')
                     ->dateTime()
                     ->searchable(),
-                TextColumn::make('customers_id')
+                TextColumn::make('customer_id')
                     ->label('ID Nasabah')
                     ->searchable(),
-                TextColumn::make('seller_id')
-                    ->label('ID Penjual')
+                TextColumn::make('collector_id')
+                    ->label('ID Pengepul')
                     ->searchable(),
                 TextColumn::make('total_amount')
                     ->label('Jumlah Total')
@@ -36,9 +36,6 @@ class StoreTransactionsTable
                     ->searchable(),
                 TextColumn::make('payment_status')
                     ->label('Status Pembayaran')
-                    ->searchable(),
-                TextColumn::make('transaction_status')
-                    ->label('Status Transaksi')
                     ->searchable(),
             ])
             ->filters([

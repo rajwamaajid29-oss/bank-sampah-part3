@@ -27,10 +27,6 @@ class StoreTransactionResource extends Resource
         return StoreTransactionForm::configure($schema);
     }
 
-    public static function infolist(Schema $schema): Schema
-    {
-        return StoreTransactionInfolist::configure($schema);
-    }
 
     public static function table(Table $table): Table
     {
@@ -49,7 +45,7 @@ class StoreTransactionResource extends Resource
         return [
             'index' => ListStoreTransactions::route('/'),
             'create' => CreateStoreTransaction::route('/create'),
-            'view' => ViewStoreTransaction::route('/{record}'),
+     
             'edit' => EditStoreTransaction::route('/{record}/edit'),
         ];
     }
