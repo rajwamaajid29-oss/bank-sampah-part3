@@ -11,6 +11,7 @@ use App\Filament\Resources\Customers\Schemas\CustomerInfolist;
 use App\Filament\Resources\Customers\Tables\CustomersTable;
 use App\Models\Customer;
 use BackedEnum;
+use App\Filament\Resources\Customers\Widgets\MyCustomer;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
@@ -40,9 +41,16 @@ class CustomerResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+                        // MyCustomer::class,
+
         ];
     }
+public static function getWidgets(): array
+{
+    return [
+        MyCustomer::class,
+    ];
+}
 
     public static function getPages(): array
     {
