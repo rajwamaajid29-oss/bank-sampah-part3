@@ -12,13 +12,16 @@ class TypeTrashForm
     {
         return $schema
             ->components([
-              TextInput::make('types_names')
-                    ->required(),
-                TextInput::make('price_per_gram')
-                    ->required(),
-                Textarea::make('description')
-                    ->required()
-                    ->columnSpanFull(),
+             TextInput::make('names')
+                ->label('Nama Jenis Sampah')
+                ->required()
+                ->maxLength(255),
+
+            Textarea::make('description')
+                ->label('Deskripsi')
+                ->required()
+                ->rows(4)
+                ->columnSpanFull(),
             ]);
     }
 }

@@ -13,8 +13,7 @@ return new class extends Migration
     {
         Schema::create('type_trashes', function (Blueprint $table) {
             $table->id();
-            $table->string('types_names');
-            $table->string('price_per_gram');
+            $table->string('names');
             $table->text('description');
             $table->timestamps();
         });
