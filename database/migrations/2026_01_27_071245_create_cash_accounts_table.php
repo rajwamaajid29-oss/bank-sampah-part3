@@ -10,17 +10,9 @@ return new class extends Migration
     {
         Schema::create('cash_accounts', function (Blueprint $table) {
             $table->id();
-
-            $table->string('name'); 
-
-            $table->decimal('balance', 15, 2)
-                  ->default(0);
-            
-
-            $table->text('description')
-                  ->nullable();
-            
-
+            $table->string('name');
+            $table->decimal('balance', 15, 2)->default(0);
+            $table->text('description')->nullable();
             $table->timestamps();
         });
     }

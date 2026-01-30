@@ -14,8 +14,6 @@ return new class extends Migration
         Schema::create('customer_accounts', function (Blueprint $table) {
             $table->id();
             $table->foreignId('customer_id')->constrained('customers')->cascadeOnDelete('cascade');
-
-
     $table->Integer('total_balance')->default(0)->nullable();
     $table->integer('total_points')->default(0)->nullable();
     $table->enum('status', ['active', 'inactive', 'blocked'])->default('active');
